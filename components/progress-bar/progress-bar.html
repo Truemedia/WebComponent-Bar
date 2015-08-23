@@ -1,0 +1,26 @@
+<!-- Progress Bar - Web component prototype -->
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<dom-module id="progress-bar">
+	<style>
+		/* Shadow DOM styling */
+		div {
+			font-weight: bold;
+			color: black;
+			background-color: green;
+			min-width: 100px;
+			min-height: 20px;
+		}
+	</style>
+	<template>
+		<!-- Shadow DOM -->
+		<div>
+			100%
+		</div>
+	</template>
+	<script>
+		/* Initialize component */
+		Polymer({
+			is: 'progress-bar'
+		});
+	</script>
+</dom-module>

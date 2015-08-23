@@ -3,7 +3,7 @@ A web component spec for bars, for making percentage/fraction based UI such as p
 
 This is an experimental spec as my first attempt at making a web component.
 
-The base element is `<bar></bar>` with 3 variations with specific attribute and styling differences. The content of the element servers as the label.
+The base element is `<bar></bar>` with 3 variations with specific attribute and styling differences. The content of the element serves as the label.
 
 The main purpose of this repo is to slim down the complexity of bar based UIs, while adding some easy options for doing fancy looking things.
 
