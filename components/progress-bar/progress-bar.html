@@ -3,24 +3,57 @@
 <dom-module id="progress-bar">
 	<style>
 		/* Shadow DOM styling */
-		div {
+		:host {
 			font-weight: bold;
 			color: black;
-			background-color: green;
+			background-color: grey;
+			min-height: 32px;
 			min-width: 100px;
-			min-height: 20px;
+			position: relative;
+			display: block;
+		}
+		.content-container ::content {
+			z-index: 2;
+			position: absolute;
+			left: 0;
+			color: white;
+			background-color: red;
+		}
+		.progress-bar__interval {
+			position: absolute;
+			background-color: green;
+			left: 0;
+			top: 0;
+			height: 100%;
 		}
 	</style>
 	<template>
 		<!-- Shadow DOM -->
-		<div>
-			100%
+		<div class="progress-bar__interval" style$="{{width}}"></div>
+		<div class="content-container">
+			<content></content>
 		</div>
 	</template>
 	<script>
 		/* Initialize component */
 		Polymer({
-			is: 'progress-bar'
+			is: 'progress-bar',
+			properties: {
+				percentage: {
+					type: Number,
+					val: 0
+				},
+				width: {
+					type: String,
+					computed: 'computeWidth(percentage)'
+				}
+			},
+			computeWidth: function(percentage)
+			{
+				return 'width: ' + percentage + '%;';
+			}
 		});
+
+		var component = document.createElement('progress-bar');
 	</script>
 </dom-module>
